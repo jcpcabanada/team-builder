@@ -42,10 +42,10 @@ export default function Form(props) {
                         name="position"
                         onChange={onChange}>
                         <option value="">--Select a Position--</option>
-                        <option value="initiator">INITIATOR</option>
-                        <option value="duelist">DUELIST</option>
-                        <option value="sentinel">SENTINEL</option>
-                        <option value="controller">CONTROLLER</option>
+                        <option value="Initiator">INITIATOR</option>
+                        <option value="Duelist">DUELIST</option>
+                        <option value="Sentinel">SENTINEL</option>
+                        <option value="Controller">CONTROLLER</option>
                     </select>
                 </label>
                 <div className='submit'>
