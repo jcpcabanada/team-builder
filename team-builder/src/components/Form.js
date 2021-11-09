@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Form(props) {
 
-    const {submit, values, update} = props
+    const { values, update, submit} = props
 
     const onSubmit = evt => {
         evt.preventDefault();
@@ -11,7 +11,7 @@ export default function Form(props) {
 
     const onChange = evt => {
         const name = evt.target.name;
-        const {value} = evt.target;
+        const value = evt.target.value;
         update(name, value);
     }
 
@@ -22,8 +22,9 @@ export default function Form(props) {
                     <input
                         type="text"
                         name="fullname"
-                        value={values.Fullname}
+                        value={values.fullname}
                         onChange={onChange}
+                        placeholder="you gotta name?"
                     />
                 </label>
                 <label>Email
@@ -32,6 +33,7 @@ export default function Form(props) {
                         name="email"
                         value={values.email}
                         onChange={onChange}
+                        placeholder="email not social security"
                     />
                 </label>
                 <label>Position
@@ -39,7 +41,7 @@ export default function Form(props) {
                         value={values.position}
                         name="position"
                         onChange={onChange}>
-                        <option value="">--Select a Position</option>
+                        <option value="">--Select a Position--</option>
                         <option value="initiator">INITIATOR</option>
                         <option value="duelist">DUELIST</option>
                         <option value="sentinel">SENTINEL</option>
@@ -47,12 +49,11 @@ export default function Form(props) {
                     </select>
                 </label>
                 <div className='submit'>
-                    <button disabled={!values.Fullname || !values.email || !values.position}>
+                    <button disabled={!values.fullname || !values.email || !values.position}>
                         submit
                     </button>
                 </div>
             </div>
-
         </form>
     )
 }
